@@ -378,33 +378,3 @@ button:hover {
     }
 }
 
-/* Simplified 480px Media Query */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 20px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .news article {
-        width: 100%;
-    }
-
-    .product {
-        width: 100%;
-    }
-
-    #about h2 {
-        font-size: 24px;
-    }
-
-    #about p {
-        font-size: 16px;
-    }
-
-    footer .footer-section.social {
-        align-items: center;
-    }
-}
