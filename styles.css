@@ -371,4 +371,23 @@ button:hover {
     .search-bar button {
         width: 15%;
     }
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 }
