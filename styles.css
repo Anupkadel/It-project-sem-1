@@ -6,33 +6,34 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Header and Navigation */
 header {
     background-color: lightgrey;
-    height: auto; /* Changed from fixed height */
+    height: 6vh;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 20px; /* Added padding for better spacing */
 }
 
 header nav {
     display: flex;
+    height: 6vh;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    border-radius: 5px;
+    padding: 0 20px;
 }
 
 nav ul {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    list-style: none;
 }
 
 nav ul li a {
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 7px;
+    color: black;
 }
 
 nav ul li a:hover {
@@ -43,7 +44,6 @@ nav ul li a:hover {
 nav .hancy {
     display: flex;
     gap: 10px;
-    align-items: center;
 }
 
 .search-bar input {
@@ -56,16 +56,20 @@ nav .hancy {
     border-radius: 6px;
     background-color: red;
     color: white;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
 }
 
-.search button:hover,
-.search button:active {
+.search button:hover {
     background-color: rgba(255, 0, 0, 0.74);
+    color: rgba(255, 255, 255, 0.881);
 }
 
-/* Hero Section */
+.search button:active {
+    background-color: rgba(255, 0, 0, 0.537);
+}
+
+/* Top section */
 .hero {
     background: url('banner.jpg') center/cover no-repeat;
     height: 300px;
@@ -75,21 +79,20 @@ nav .hancy {
     align-items: center;
     color: aquamarine;
     text-align: center;
-    padding: 20px; /* Added padding for smaller screens */
+    margin-bottom: 70px;
 }
 
-/* News Section */
+/* News */
 .news {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-between;
     gap: 20px;
     padding: 20px;
-    justify-content: center; /* Center items on smaller screens */
+    margin-top: 60px;
 }
 
 .news article {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 300px; /* Limit width on larger screens */
+    width: 300px;
     background: #f4f4f4;
     padding: 15px;
     border-radius: 5px;
@@ -104,22 +107,36 @@ nav .hancy {
 }
 
 /* Shop Section */
+.shop {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.shop h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .shop-container {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
 }
 
 .product {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 220px; /* Limit width on larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 220px;
+    min-height: 320px;
 }
 
 .product img {
@@ -138,22 +155,26 @@ nav .hancy {
     justify-content: center;
 }
 
-/* Buy Now Button */
+.product .price {
+    font-size: 16px;
+    color: #008000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .product button {
-    background: #007bff; /* Default button color (blue) */
+    background: #007bff;
     color: white;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: 0.3s;
 }
 
-.product button:hover,
-.product button:active {
-    background: #0056b3; /* Darker blue on hover/active */
-    transform: scale(1.05); /* Slightly increase size */
+.product button:hover {
+    background: #0056b3;
 }
 
 /* Footer */
@@ -172,16 +193,6 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    display: inline;
-    margin: 0 10px;
 }
 
 .footer-section.social {
@@ -217,11 +228,9 @@ ul li {
     background: #ffcc00;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
 }
 
-.subscribe button:hover,
-.subscribe button:active {
+.subscribe button:hover {
     background: #e6b800;
 }
 
@@ -236,8 +245,7 @@ ul li {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-#about h2,
-#about h3 {
+#about h2, #about h3 {
     color: #222;
     margin-bottom: 10px;
 }
@@ -269,57 +277,133 @@ ul li {
     font-weight: bold;
 }
 
-/* Media Queries for Responsiveness */
+button:hover {
+    background-color: #004080;
+    color: white;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+/* Hamburger Menu */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    /* Adjust header and navigation for smaller screens */
-    header nav {
-        flex-direction: column;
-        align-items: flex-start;
+    .menu-icon {
+        display: flex;
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        gap: 5px;
+        width: 100%;
+        background-color: lightgrey;
+        position: absolute;
+        top: 6vh;
+        left: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
     }
 
     .hero {
-        height: 200px; /* Smaller height for mobile */
+        height: 200px;
     }
 
-    .news article {
-        width: 100%; /* Full width on mobile */
+    .hero h1 {
+        font-size: 24px;
     }
 
-    .product {
-        width: 100%; /* Full width on mobile */
+    .hero p {
+        font-size: 16px;
     }
 
-    .footer-container {
+    .news {
         flex-direction: column;
         align-items: center;
     }
 
+    .news article {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .shop-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #about {
+        padding: 20px;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
     .subscribe {
-        text-align: center; /* Center subscribe section on mobile */
+        text-align: center;
+    }
+
+    .subscribe input {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    /* Further adjustments for very small screens */
     .hero h1 {
-        font-size: 24px; /* Smaller font size for mobile */
+        font-size: 20px;
     }
 
     .hero p {
         font-size: 14px;
     }
 
-    .search-bar input {
-        width: 100%; /* Full width search bar */
+    .news article {
+        width: 100%;
     }
 
-    .search button {
-        width: 100%; /* Full width button */
-        margin-top: 10px;
+    .product {
+        width: 100%;
+    }
+
+    #about h2 {
+        font-size: 24px;
+    }
+
+    #about p {
+        font-size: 16px;
+    }
+
+    footer .footer-section.social {
+        align-items: center;
     }
 }
