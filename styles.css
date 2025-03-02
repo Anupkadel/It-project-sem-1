@@ -378,6 +378,7 @@ button:hover {
     }
 }
 
+/* Simplified 480px Media Query */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 20px;
