@@ -114,3 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
         imageObserver.observe(img);
     });
 });
+
+document.getElementById('menuIcon').addEventListener('click', function() {
+    var navLinks = document.querySelector('nav ul');
+    navLinks.classList.toggle('active');
+});
