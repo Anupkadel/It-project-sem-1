@@ -1,63 +1,70 @@
-/* Reset default styles */
-
-
+/* General Responsive Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-header{
-    background-color:lightgrey;
-    height:6vh;
-    position:sticky;
-top:0;
-z-index: 1000;
+
+/* Header and Navigation */
+header {
+    background-color: lightgrey;
+    height: auto; /* Changed from fixed height */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px; /* Added padding for better spacing */
 }
 
-
-header nav{
-display: flex;
-height:6vh;
-justify-content: space-between;
-width:100%;
-align-items: center;
-border-radius:5px;
-}
-nav ul li a{
-text-decoration: none;
-padding:5px 5px;
-border-radius:7px;
-}
-nav ul li a:hover{
-    background-color: rgba(0, 0, 0, 0.362);
-    color:white;
-}
-nav .hancy{
+header nav {
     display: flex;
-    gap:10px;
-}
-.search-bar input{
-border-radius:6px;
-padding:5px 5px;
-}
-.search button{
-padding:5px 5px;
-border-radius:6px;
-margin-right:2px;
-background-color:red;
-color:white;
-}
-.search button:hover{
-    background-color: rgba(255, 0, 0, 0.74);
-    color:rgba(255, 255, 255, 0.881);
-}
-.search button:active{
-background-color: rgba(255, 0, 0, 0.537);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-/* Top section */
-.hero{
+nav ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.362);
+    color: white;
+}
+
+nav .hancy {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-bar input {
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.search button {
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgba(255, 0, 0, 0.74);
+}
+
+/* Hero Section */
+.hero {
     background: url('banner.jpg') center/cover no-repeat;
     height: 300px;
     display: flex;
@@ -66,78 +73,53 @@ background-color: rgba(255, 0, 0, 0.537);
     align-items: center;
     color: aquamarine;
     text-align: center;
+    padding: 20px; /* Added padding for smaller screens */
 }
 
-.hero{
-    margin-bottom: 70px;
+/* News Section */
+.news {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Center items on smaller screens */
 }
-
-
-/* News */
 
 .news article {
-    width: 300px;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit width on larger screens */
     background: #f4f4f4;
     padding: 15px;
     border-radius: 5px;
     text-align: center;
 }
+
 .news img {
     height: 200px;
     object-fit: cover;
     width: 100%;
     border-radius: 5px;
 }
-.news {
+
+/* Shop Section */
+.shop-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center;
     gap: 20px;
     padding: 20px;
 }
 
-
-.news{
-    margin-top: 60px;
-}
-
-
-/* Shop Section */
-.shop {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #f8f8f8;
-}
-
-/* Shop Title */
-.shop h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Container for Products */
-.shop-container {
-    display: flex;          /* Enables flexbox */
-    flex-wrap: wrap;        /* Allows wrapping to the next line if needed */
-    justify-content: center; /* Centers items horizontally */
-    gap: 20px;              /* Adds spacing between products */
-}
-
-/* Product Card */
 .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 220px; /* Limit width on larger screens */
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 220px;   /* Fixed width to fit side by side */
-    min-height: 320px;
 }
 
-/* Product Image */
 .product img {
     width: 100%;
     height: 150px;
@@ -145,41 +127,7 @@ background-color: rgba(255, 0, 0, 0.537);
     border-radius: 8px;
 }
 
-/* Product Title */
-.product h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Product Price */
-.product .price {
-    font-size: 16px;
-    color: #008000;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Buy Now Button */
-.product button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.product button:hover {
-    background: #0056b3;
-}
-/* footer */
-
+/* Footer */
 footer {
     background-color: #222;
     color: white;
@@ -188,50 +136,20 @@ footer {
     margin-top: 20px;
 }
 
-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
 .footer-section.social {
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between; /* Aligns left and right sections */
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 250px;
+    align-items: flex-start;
 }
 
 .subscribe {
-    text-align: right; /* Moves it to the right */
+    text-align: right;
 }
 
 .subscribe input {
     padding: 5px;
-    width: 150px; /* Smaller input box */
+    width: 150px;
     font-size: 14px;
 }
 
@@ -243,10 +161,10 @@ ul li {
 }
 
 .subscribe button:hover {
-    background: #e6b800;
+    background: #e6b800;
 }
 
- /*About Us Section */
+/* About Us Section */
 #about {
     background-color: #f4f4f4;
     text-align: center;
@@ -257,98 +175,57 @@ ul li {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
-#about h2, #about h3 {
-    color: #222;
-    margin-bottom: 10px;
-}
-
-/* Paragraphs */
-#about p {
-    font-size: 18px;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Image Styling */
-.about-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* List Styling */
-#about ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-#about ul li {
-    font-size: 18px;
-    background: none;
-    margin: 10px 0;
-    font-weight: bold;
-}
-button:hover {
-    background-color: #004080; /* Change color */
-    color: white;
-    transform: scale(1.1); /* Slightly increase size */
-    transition: 0.3s ease-in-out;
-  }
-
- @media (max-width: 768px) {
-    /* Container */
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    /* Navbar */
-    .navbar {
-        display: flex;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust header and navigation for smaller screens */
+    header nav {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
     }
 
-    .navbar ul {
-        display: flex;
+    nav ul {
         flex-direction: column;
         gap: 5px;
-        padding: 0;
     }
 
-    .navbar ul li {
-        display: block;
-        width: 100%;
-        text-align: center;
+    .hero {
+        height: 200px; /* Smaller height for mobile */
     }
 
-    /* Shop Section */
-    .shop-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    .news article {
+        width: 100%; /* Full width on mobile */
     }
 
-    .shop-container .item {
-        width: 90%;
-        margin-bottom: 20px;
+    .product {
+        width: 100%; /* Full width on mobile */
     }
 
-    /* Footer */
     .footer-container {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
-    /* Subscription Box */
     .subscribe {
-        width: 100%;
+        text-align: center; /* Center subscribe section on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .hero h1 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .search-bar input {
+        width: 100%; /* Full width search bar */
+    }
+
+    .search button {
+        width: 100%; /* Full width button */
+        margin-top: 10px;
     }
 }
