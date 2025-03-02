@@ -6,26 +6,32 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Header and Navigation */
 header {
     background-color: lightgrey;
-    height: 6vh;
+    height: auto; /* Changed from fixed height */
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 10px 20px; /* Added padding for better spacing */
 }
 
 header nav {
     display: flex;
-    height: 6vh;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
-    border-radius: 5px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav ul li a {
     text-decoration: none;
-    padding: 5px 5px;
+    padding: 5px 10px;
     border-radius: 7px;
 }
 
@@ -37,31 +43,29 @@ nav ul li a:hover {
 nav .hancy {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 .search-bar input {
     border-radius: 6px;
-    padding: 5px 5px;
+    padding: 5px;
 }
 
 .search button {
-    padding: 5px 5px;
+    padding: 5px 10px;
     border-radius: 6px;
-    margin-right: 2px;
     background-color: red;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.search button:hover {
-    background-color: rgba(255, 0, 0, 0.74);
-    color: rgba(255, 255, 255, 0.881);
-}
-
+.search button:hover,
 .search button:active {
-    background-color: rgba(255, 0, 0, 0.537);
+    background-color: rgba(255, 0, 0, 0.74);
 }
 
-/* Top section */
+/* Hero Section */
 .hero {
     background: url('banner.jpg') center/cover no-repeat;
     height: 300px;
@@ -71,15 +75,21 @@ nav .hancy {
     align-items: center;
     color: aquamarine;
     text-align: center;
+    padding: 20px; /* Added padding for smaller screens */
 }
 
-.hero {
-    margin-bottom: 70px;
+/* News Section */
+.news {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Center items on smaller screens */
 }
 
-/* News */
 .news article {
-    width: 300px;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit width on larger screens */
     background: #f4f4f4;
     padding: 15px;
     border-radius: 5px;
@@ -93,54 +103,25 @@ nav .hancy {
     border-radius: 5px;
 }
 
-.news {
+/* Shop Section */
+.shop-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center;
     gap: 20px;
     padding: 20px;
 }
 
-.news {
-    margin-top: 60px;
-}
-
-/* Shop Section */
-.shop {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #f8f8f8;
-}
-
-/* Shop Title */
-.shop h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Container for Products */
-.shop-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Product Card */
 .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 220px; /* Limit width on larger screens */
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 220px;
-    min-height: 320px;
 }
 
-/* Product Image */
 .product img {
     width: 100%;
     height: 150px;
@@ -148,7 +129,6 @@ nav .hancy {
     border-radius: 8px;
 }
 
-/* Product Title */
 .product h3 {
     font-size: 18px;
     margin: 10px 0;
@@ -158,28 +138,22 @@ nav .hancy {
     justify-content: center;
 }
 
-/* Product Price */
-.product .price {
-    font-size: 16px;
-    color: #008000;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
 /* Buy Now Button */
 .product button {
-    background: #007bff;
+    background: #007bff; /* Default button color (blue) */
     color: white;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: 0.3s;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.product button:hover {
-    background: #0056b3;
+.product button:hover,
+.product button:active {
+    background: #0056b3; /* Darker blue on hover/active */
+    transform: scale(1.05); /* Slightly increase size */
 }
 
 /* Footer */
@@ -243,9 +217,11 @@ ul li {
     background: #ffcc00;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.subscribe button:hover {
+.subscribe button:hover,
+.subscribe button:active {
     background: #e6b800;
 }
 
@@ -260,13 +236,12 @@ ul li {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
-#about h2, #about h3 {
+#about h2,
+#about h3 {
     color: #222;
     margin-bottom: 10px;
 }
 
-/* Paragraphs */
 #about p {
     font-size: 18px;
     color: #444;
@@ -274,7 +249,6 @@ ul li {
     margin-bottom: 20px;
 }
 
-/* Image Styling */
 .about-img {
     width: 100%;
     max-width: 400px;
@@ -283,7 +257,6 @@ ul li {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* List Styling */
 #about ul {
     list-style: disc;
     padding-left: 20px;
@@ -296,9 +269,57 @@ ul li {
     font-weight: bold;
 }
 
-button:hover {
-    background-color: #004080;
-    color: white;
-    transform: scale(1.1);
-    transition: 0.3s ease-in-out;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust header and navigation for smaller screens */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hero {
+        height: 200px; /* Smaller height for mobile */
+    }
+
+    .news article {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .product {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscribe {
+        text-align: center; /* Center subscribe section on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .hero h1 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .search-bar input {
+        width: 100%; /* Full width search bar */
+    }
+
+    .search button {
+        width: 100%; /* Full width button */
+        margin-top: 10px;
+    }
 }
