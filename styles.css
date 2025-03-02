@@ -300,36 +300,13 @@ button:hover {
   }
 
  @media (max-width: 768px) {
+    /* Container */
     .container {
         width: 100%;
         padding: 10px;
     }
 
-    .shop-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .shop-container .item {
-        width: 90%;  /* Ensuring items take full width */
-        margin-bottom: 20px;
-    }
-
-    .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Aligning items properly */
-        text-align: center;
-    }
-
-    .subscribe {
-        width: 100%;
-    }
-}  /* <== Make sure this closing bracket exists */
-
-
-@media (max-width: 768px) {
+    /* Navbar */
     .navbar {
         display: flex;
         flex-direction: column;
@@ -340,7 +317,7 @@ button:hover {
     .navbar ul {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        gap: 5px;
         padding: 0;
     }
 
@@ -348,46 +325,30 @@ button:hover {
         display: block;
         width: 100%;
         text-align: center;
-        margin: 5px 0;
     }
 
-    .navbar ul li a {
-        display: block;
-        padding: 10px;
-        width: 100%;
-        color: blue;  /* Ensure links are visible */
-        text-decoration: none;
+    /* Shop Section */
+    .shop-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .search-bar {
+    .shop-container .item {
         width: 90%;
-        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
-    .search-bar input {
-        width: 80%;
+    /* Footer */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .search-bar button {
-        width: 15%;
+    /* Subscription Box */
+    .subscribe {
+        width: 100%;
     }
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.navbar ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 0;
-}
-
-.navbar ul li {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
 }
